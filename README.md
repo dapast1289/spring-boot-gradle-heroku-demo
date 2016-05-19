@@ -28,3 +28,28 @@ And after this you can deploy it:
 ```bash
 git push heroku master
 ```
+
+## Using it without IntelliJ IDEA Ultimate Edition (plain text editor?)
+
+Initialization that you have to do once. There are git clone, creating heroku app and creating Postgres addon.
+
+```bash
+git clone https://github.com/sreym/spring-boot-gradle-heroku-demo.git
+cd spring-boot-gradle-heroku-demo
+git checkout database
+heroku create
+heroku addons:create heroku-postgresql
+```
+
+For local running type the next command: 
+```bash
+DATABASE_URL=`heroku config:get DATABASE_URL` ./gradlew bootRun
+```
+After this you can locate your browser to [http://localhost:8080](http://localhost:8080).
+
+For publish on herokuapp:
+```bash
+git commit -a -m "There are lots of changes in this patch..."
+git push heroku database:master
+```
+After this you can type ```heroku open``` and it will open browser for your server.
