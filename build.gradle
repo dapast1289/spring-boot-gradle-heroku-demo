@@ -27,6 +27,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.postgresql:postgresql:9.4-1201-jdbc4");
+    compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.2.2'
     testCompile("junit:junit")
 }
 
